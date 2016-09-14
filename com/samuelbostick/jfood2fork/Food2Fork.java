@@ -5,7 +5,6 @@ import com.owlike.genson.GensonBuilder;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Food2Fork {
@@ -21,7 +20,7 @@ public class Food2Fork {
         return genson.deserialize(json, RecipeContainer.class).recipe;
     }
 
-    public SearchResult search(String query, char sort, int page) throws MalformedURLException, IOException{
+    public SearchResult search(String query, char sort, int page) throws IOException{
         String json = getJsonFromUrl("http://food2fork.com/api/search?key=" + _apiKey
                 + "&q=" + query + "&sort=" + sort + "&page=" + page);
         Genson genson = new GensonBuilder().useRuntimeType(true).create();
