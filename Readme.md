@@ -20,14 +20,14 @@ Simply create a new Food2Fork object, passing your API Key to the constructor. Y
 Food2Fork api = new Food2Fork("YOUR_API_KEY_HERE");
 ```
 
-Food2Fork.getRecipe(int id)
----------------------------
+Food2Fork.getRecipe(String id)
+------------------------------
 
 Get a Recipe object by id. 
 
 (input)
 ```java
-Recipe recipe = api.getRecipe(29159);
+Recipe recipe = api.getRecipe("29159");
 ```
 
 Food2Fork.search(String query, char sort, int page)
