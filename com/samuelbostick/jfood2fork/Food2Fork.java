@@ -14,7 +14,7 @@ public class Food2Fork {
         _apiKey = apiKey;
     }
 
-    public Recipe getRecipe(int id) throws IOException{
+    public Recipe getRecipe(String id) throws IOException{
         String json = getJsonFromUrl("http://food2fork.com/api/get?key=" + _apiKey + "&rId=" + id);
         Genson genson = new GensonBuilder().useRuntimeType(true).create();
         return genson.deserialize(json, RecipeContainer.class).recipe;

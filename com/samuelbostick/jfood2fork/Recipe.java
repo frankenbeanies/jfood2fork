@@ -3,6 +3,7 @@ package com.samuelbostick.jfood2fork;
 import com.owlike.genson.annotation.JsonProperty;
 
 public class Recipe {
+    private String _id;
     private String _imageUrl;
     private String _sourceUrl;
     private String _f2fUrl;
@@ -33,6 +34,14 @@ public class Recipe {
         _socialRank = socialRank;
         _page = page;
         _ingredients = ingredients;
+
+        String[] urlPieces = f2fUrl.split("/");
+        _id = urlPieces[urlPieces.length - 1];
+    }
+
+    @JsonProperty("id")
+    public String getId(){
+        return _id;
     }
 
     @JsonProperty("image_url")
